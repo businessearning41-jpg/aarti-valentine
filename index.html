@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Aarti ❤️ Prem</title>
+<title>Aarti ❤️ Prem | Valentine Surprise</title>
 
 <style>
 body{
   margin:0;
   font-family:'Comic Sans MS', cursive;
-  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  background: linear-gradient(135deg,#ff758c,#ff7eb3);
   overflow:hidden;
   text-align:center;
   color:white;
 }
 
-/* sections */
 section{
   display:none;
   height:100vh;
@@ -25,38 +24,36 @@ section{
 }
 .active{display:flex;}
 
-/* text animation */
 h1{
-  font-size:2.4rem;
-  animation: pulse 1.5s infinite;
+  font-size:2.5rem;
+  animation:pulse 1.4s infinite;
 }
+h2{font-size:1.8rem;}
 p{
   font-size:1.3rem;
+  line-height:1.6;
 }
 
-/* buttons */
 button{
-  padding:14px 30px;
-  margin:10px;
+  padding:15px 32px;
+  margin:12px;
   font-size:1.2rem;
   border:none;
   border-radius:30px;
   cursor:pointer;
 }
-.yes{background:#ff004f;color:white;}
-.no{background:#555;color:white;position:relative;}
+.yes{background:#ff003c;color:white;}
+.no{background:#444;color:white;position:relative;}
 
-/* teddy */
 .teddy{
-  font-size:90px;
-  animation: teddyMove 2s infinite alternate;
+  font-size:95px;
+  animation:teddyMove 2s infinite alternate;
 }
 
-/* hearts */
 .heart{
   position:absolute;
-  font-size:20px;
-  animation: float 6s linear infinite;
+  font-size:22px;
+  animation:float 6s linear infinite;
 }
 
 @keyframes pulse{
@@ -65,8 +62,8 @@ button{
   100%{transform:scale(1);}
 }
 @keyframes teddyMove{
-  from{transform:translateX(-25px);}
-  to{transform:translateX(25px);}
+  from{transform:translateX(-30px);}
+  to{transform:translateX(30px);}
 }
 @keyframes float{
   from{transform:translateY(100vh);}
@@ -77,15 +74,21 @@ button{
 
 <body>
 
-<!-- Screen 1 -->
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+
+<!-- SCREEN 1 -->
 <section class="active" id="s1">
   <h1>Aarti 💖</h1>
   <h1>Will you be my Valentine? 💘</h1>
-  <button class="yes" onclick="go(2)">YES 💕</button>
+  <p>(Click YES… my heart is waiting 🫶)</p>
+  <button class="yes" onclick="start(2)">YES 💕</button>
   <button class="no" onmouseover="moveNo()">NO 🙈</button>
 </section>
 
-<!-- Screen 2 -->
+<!-- SCREEN 2 -->
 <section id="s2">
   <h1>Aarti 🥰</h1>
   <div class="teddy">🧸</div>
@@ -95,28 +98,52 @@ button{
   <button class="yes" onclick="go(3)">Infinity ♾️😍</button>
 </section>
 
-<!-- Screen 3 -->
+<!-- SCREEN 3 -->
 <section id="s3">
   <h1>Aarti 💕</h1>
-  <p>You are my smile 😊</p>
-  <p>You are my happiness ✨</p>
+  <p>
+    You are my calm in chaos 🌙<br>
+    My smile without reason 😊<br>
+    My favorite thought every day 💭
+  </p>
   <button class="yes" onclick="go(4)">Next 💌</button>
 </section>
 
-<!-- Screen 4 -->
+<!-- SCREEN 4 -->
 <section id="s4">
+  <h1>Aarti ❤️</h1>
+  <p>
+    If love had a name,<br>
+    it would sound like you 💫
+  </p>
+  <p>
+    If home had a feeling,<br>
+    it would feel like us 🫶
+  </p>
+  <button class="yes" onclick="go(5)">One last thing… 💖</button>
+</section>
+
+<!-- FINAL SCREEN -->
+<section id="s5">
   <h1>Happy Valentine’s Day Aarti ❤️</h1>
   <div class="teddy">🧸💖</div>
   <p>
-    You are not just my Valentine,<br>
-    you are my forever 💝
+    Thank you for existing.<br>
+    Thank you for being you.<br>
+    Thank you for being mine 💝
   </p>
-  <h2 style="margin-top:20px;">
-    With all my love,<br>Prem ❤️
+  <h2>
+    With all my love,<br>
+    Prem ❤️
   </h2>
 </section>
 
 <script>
+function start(n){
+  document.getElementById("music").play();
+  go(n);
+}
+
 function go(n){
   document.querySelectorAll("section")
     .forEach(s=>s.classList.remove("active"));
@@ -125,8 +152,8 @@ function go(n){
 
 function moveNo(){
   const b=document.querySelector(".no");
-  b.style.left=(Math.random()*200-100)+"px";
-  b.style.top=(Math.random()*200-100)+"px";
+  b.style.left=(Math.random()*250-125)+"px";
+  b.style.top=(Math.random()*250-125)+"px";
 }
 
 function hearts(){
@@ -137,7 +164,7 @@ function hearts(){
   document.body.appendChild(h);
   setTimeout(()=>h.remove(),6000);
 }
-setInterval(hearts,250);
+setInterval(hearts,220);
 </script>
 
 </body>
