@@ -2,111 +2,133 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Aarti ❤️ Prem</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine’s Day Aarti ❤️</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- GLOBAL ---------- */
+/* ===== GLOBAL ===== */
 body{
   margin:0;
-  font-family:'Noto Serif Devanagari','Segoe UI',serif;
   overflow:hidden;
-  color:#fff;
-  text-align:center;
   background:
-    radial-gradient(circle at top,#ffd1dc,#ff9aa2 60%,#ff6f91);
+    url("https://www.transparenttextures.com/patterns/hearts.png"),
+    linear-gradient(135deg,#ffd1e8,#ff9fc9,#ff5f9e);
+  background-size:220px,cover;
+  font-family:'Noto Serif Devanagari',serif;
 }
 
-/* ---------- SECTIONS ---------- */
-section{
-  display:none;
+/* ===== CARD ===== */
+.card{
   height:100vh;
-  padding:40px 20px;
+  padding:4vh 4vw;
   box-sizing:border-box;
+  border:10px solid rgba(255,255,255,0.7);
+  border-radius:26px;
+  box-shadow:0 0 28px rgba(255,0,120,0.45);
+  text-align:center;
+  display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
 }
-.active{display:flex;}
 
-/* ---------- TEXT ---------- */
+/* ===== SCREENS ===== */
+section{display:none;}
+section.active{display:block;width:100%;}
+
+/* ===== TEXT ===== */
 h1{
-  font-size:2.4rem;
-  margin:10px 0;
-  animation:pulse 6s infinite;
+  font-family:'Pacifico',cursive;
+  font-size:7vw;
+  max-font-size:3rem;
+  color:#b30059;
+  margin:1vh 0;
+}
+h2{
+  font-family:'Poppins',sans-serif;
+  font-size:5vw;
+  max-font-size:2rem;
+  color:#ff2f7d;
+  margin:1vh 0;
 }
 p{
-  font-size:1.35rem;
+  font-size:4.5vw;
+  max-font-size:1.4rem;
   line-height:1.7;
-  max-width:650px;
-  animation:fadeIn 12s forwards;
+  font-weight:700;
+  margin:1vh auto;
+  max-width:90%;
 }
 
-/* ---------- BUTTONS ---------- */
+/* Color accents */
+.pink{color:#ff0066;}
+.red{color:#b8003a;}
+.purple{color:#7a2cff;}
+.gold{color:#b8860b;}
+
+/* ===== BUTTONS ===== */
 button{
-  padding:14px 32px;
-  margin:14px;
-  font-size:1.2rem;
+  padding:1.6vh 6vw;
+  margin:1.2vh;
+  font-size:4.2vw;
+  max-font-size:1.2rem;
   border:none;
-  border-radius:30px;
+  border-radius:40px;
   cursor:pointer;
+  font-family:'Poppins',sans-serif;
 }
 .yes{
-  background:#ff3366;
-  color:#fff;
+  background:linear-gradient(135deg,#ff2f7d,#ff7aa2);
+  color:white;
 }
 .no{
   background:#444;
-  color:#fff;
+  color:white;
   position:relative;
 }
 
-/* ---------- TEDDY ---------- */
+/* ===== TEDDY ===== */
 .teddy{
-  font-size:90px;
-  animation:teddyMove 14s infinite alternate ease-in-out;
+  font-size:18vh;
+  max-font-size:100px;
+  margin:1vh 0;
+  animation:teddyWalk 6s ease-in-out infinite alternate;
+}
+@keyframes teddyWalk{
+  from{transform:translateX(-60px);}
+  to{transform:translateX(60px);}
 }
 
-/* ---------- CORNER TEDDIES ---------- */
+/* ===== CORNER TEDDIES ===== */
 .corner{
   position:fixed;
-  font-size:45px;
-  opacity:0.6;
-  animation:cornerFloat 18s infinite alternate ease-in-out;
+  font-size:6vh;
+  max-font-size:50px;
+  opacity:0.85;
+  animation:cornerPulse 4s infinite alternate;
 }
-.tl{top:10px;left:10px;}
-.tr{top:10px;right:10px;}
-.bl{bottom:10px;left:10px;}
-.br{bottom:10px;right:10px;}
+.tl{top:1vh;left:1vw;}
+.tr{top:1vh;right:1vw;}
+.bl{bottom:1vh;left:1vw;}
+.br{bottom:1vh;right:1vw;}
+@keyframes cornerPulse{
+  from{transform:scale(1);}
+  to{transform:scale(1.1);}
+}
 
-/* ---------- HEARTS ---------- */
+/* ===== HEARTS ===== */
 .heart{
   position:absolute;
-  font-size:22px;
-  opacity:0.6;
-  animation:floatUp 20s linear infinite;
+  font-size:4vh;
+  animation:float 14s linear infinite;
+  opacity:0.65;
 }
-
-/* ---------- ANIMATIONS ---------- */
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.05);}
-  100%{transform:scale(1);}
-}
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
-}
-@keyframes teddyMove{
-  from{transform:translateX(-20px);}
-  to{transform:translateX(20px);}
-}
-@keyframes floatUp{
+@keyframes float{
   from{transform:translateY(110vh);}
   to{transform:translateY(-10vh);}
-}
-@keyframes cornerFloat{
-  from{transform:translateY(-6px);}
-  to{transform:translateY(6px);}
 }
 </style>
 </head>
@@ -115,119 +137,104 @@ button{
 
 <!-- 🎶 MUSIC -->
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/10/11/audio_1f8d8c4f59.mp3">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_35b63bcbf1.mp3">
 </audio>
 
-<!-- 🧸 CORNER TEDDIES -->
+<div class="card">
+
+<!-- Corner Teddies -->
 <div class="corner tl">🧸</div>
 <div class="corner tr">🧸</div>
 <div class="corner bl">🧸</div>
 <div class="corner br">🧸</div>
 
-<!-- ❤️ SCREEN 1 -->
+<!-- SCREEN 1 -->
 <section class="active" id="s1">
   <h1>Aarti 💖</h1>
-  <h1>Will you be my Valentine?</h1>
-  <p>ये सवाल मैंने जल्दबाज़ी में नहीं पूछा है…  
-     ये वो एहसास है, जो दिल में बहुत समय से था।</p>
+  <p class="pink">ये कोई साधारण सवाल नहीं है…</p>
+  <p class="purple">ये वो एहसास है, जो <span class="gold">दिल में बहुत समय से</span> था।</p>
+  <h2 class="red">क्या तुम मेरी वैलेंटाइन बनोगी?</h2>
   <button class="yes" onclick="start(2)">हाँ ❤️</button>
   <button class="no" onmouseover="zigzag(this)">ना 🙈</button>
 </section>
 
-<!-- ❤️ SCREEN 2 -->
+<!-- SCREEN 2 -->
 <section id="s2">
   <div class="teddy">🧸</div>
-  <p>
-    क्या तुम्हें एहसास है कि  
-    तुम मेरी ज़िंदगी में कितनी खास हो?
-  </p>
+  <p class="pink">क्या तुम्हें एहसास है…</p>
+  <p class="red">तुम मेरी ज़िंदगी में <span class="gold">कितनी खास</span> हो?</p>
   <button class="yes" onclick="go(3)">हाँ, सच में 💕</button>
   <button class="no" onmouseover="zigzagWide(this)">ना 🙈</button>
 </section>
 
-<!-- ❤️ SCREEN 3 -->
+<!-- SCREEN 3 -->
 <section id="s3">
-  <p>
-    जब मैं तुम्हें याद करता हूँ,  
-    तो क्या तुम भी मुझे महसूस करती हो?
-  </p>
+  <p class="purple">जब मैं तुम्हें याद करता हूँ,</p>
+  <p class="pink">क्या तुम्हारा दिल भी <span class="gold">मुझे महसूस</span> करता है?</p>
   <button class="yes" onclick="go(4)">हाँ, बिल्कुल 🥰</button>
   <button class="no" onmouseover="zigzagFast(this)">ना 🙈</button>
 </section>
 
-<!-- ❤️ SCREEN 4 -->
+<!-- SCREEN 4 -->
 <section id="s4">
-  <p>
-    क्या तुम जानती हो कि  
-    तुम्हारी एक मुस्कान  
-    मेरा पूरा दिन बदल देती है?
-  </p>
-  <button class="yes" onclick="go(5)">हाँ, दिल से 💖</button>
-  <button class="no" onmouseover="zigzagCurve(this)">ना 🙈</button>
-</section>
-
-<!-- ❤️ SCREEN 5 -->
-<section id="s5">
-  <p>
-    अगर मैं कहूँ कि  
-    मेरा सुकून… मेरा घर…  
-    सब कुछ तुम हो,
-    तो क्या तुम यक़ीन करोगी?
-  </p>
-  <button class="yes" onclick="go(6)">हाँ 💞</button>
-</section>
-
-<!-- ❤️ FINAL SCREEN -->
-<section id="s6">
-  <h1>Happy Valentine’s Day Aarti ❤️</h1>
   <div class="teddy">🧸💖</div>
-  <p>
-    मैं परफेक्ट नहीं हूँ,  
-    लेकिन तुम्हें चुनता हूँ —  
-    आज भी… और हर दिन।
-  </p>
-  <h2>With all my love,<br>Prem ❤️</h2>
+  <p class="red">तुम्हारी एक मुस्कान…</p>
+  <p class="purple">मेरा <span class="gold">पूरा दिन</span> बदल देती है।</p>
+  <button class="yes" onclick="go(5)">हाँ, दिल से 💖</button>
+  <button class="no" onmouseover="zigzagFall(this)">ना 🙈</button>
 </section>
+
+<!-- FINAL SCREEN -->
+<section id="s5">
+  <h1>Happy Valentine’s Day Aarti ❤️</h1>
+  <p class="pink">मैं परफेक्ट नहीं हूँ,</p>
+  <p class="red">लेकिन तुम्हें <span class="gold">हर दिन</span> चुनता हूँ।</p>
+  <p class="purple">तुम मेरी सबसे <span class="gold">खूबसूरत कहानी</span> हो।</p>
+  <h2 class="red">Prem ❤️</h2>
+</section>
+
+</div>
 
 <script>
-/* ---------- NAV ---------- */
+/* MUSIC START */
 function start(n){
   document.getElementById("music").play();
   go(n);
 }
+
+/* NAVIGATION */
 function go(n){
   document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
   document.getElementById("s"+n).classList.add("active");
 }
 
-/* ---------- NO BUTTON MOVEMENTS ---------- */
-function zigzag(btn){
-  btn.style.left=(Math.random()*200-100)+"px";
-  btn.style.top=(Math.random()*120-60)+"px";
+/* NO BUTTON BEHAVIOR */
+function zigzag(b){
+  b.style.left=(Math.random()*200-100)+"px";
+  b.style.top=(Math.random()*120-60)+"px";
 }
-function zigzagWide(btn){
-  btn.style.left=(Math.random()*300-150)+"px";
-  btn.style.top=(Math.random()*180-90)+"px";
+function zigzagWide(b){
+  b.style.left=(Math.random()*300-150)+"px";
+  b.style.top=(Math.random()*200-100)+"px";
 }
-function zigzagFast(btn){
-  btn.style.left=(Math.random()*220-110)+"px";
-  btn.style.top=(Math.random()*220-110)+"px";
+function zigzagFast(b){
+  b.style.left=(Math.random()*220-110)+"px";
+  b.style.top=(Math.random()*220-110)+"px";
 }
-function zigzagCurve(btn){
-  btn.style.left=(Math.random()*260-130)+"px";
-  btn.style.top=(Math.random()*140-70)+"px";
+function zigzagFall(b){
+  b.style.top="200px";
+  setTimeout(()=>b.style.top="0px",300);
 }
 
-/* ---------- HEARTS ---------- */
-function hearts(){
+/* HEARTS ALWAYS */
+setInterval(()=>{
   const h=document.createElement("div");
   h.className="heart";
   h.innerHTML="❤️";
   h.style.left=Math.random()*100+"vw";
   document.body.appendChild(h);
-  setTimeout(()=>h.remove(),20000);
-}
-setInterval(hearts,1200);
+  setTimeout(()=>h.remove(),15000);
+},350);
 </script>
 
 </body>
