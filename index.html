@@ -1,253 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Valentine’s Day Aarti ❤️</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Valentine Card ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+*{box-sizing:border-box}
 body{
   margin:0;
-  overflow:hidden;
-  background:
-    url("https://www.transparenttextures.com/patterns/hearts.png"),
-    linear-gradient(135deg,#ffd1e8,#ff9fc9,#ff5f9e);
-  background-size:220px,cover;
-  font-family:'Noto Serif Devanagari',serif;
-}
-.card{
-  height:100vh;
-  padding:4vh 4vw;
-  box-sizing:border-box;
-  border:12px solid rgba(255,255,255,0.75);
-  border-radius:28px;
-  box-shadow:0 0 30px rgba(255,0,120,0.5);
+  min-height:100vh;
+  font-family:Poppins, sans-serif;
+  background:linear-gradient(135deg,#ff9a9e,#fbc2eb,#a18cd1);
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
+  overflow:hidden;
+}
+.card{
+  width:92%;
+  max-width:420px;
+  background:#fff0f6;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  padding:18px;
   text-align:center;
-}
-section{display:none;width:100%;}
-section.active{display:block;}
-
-h1{
-  font-family:'Pacifico',cursive;
-  font-size:7vw;
-  max-font-size:3rem;
-  color:#b30059;
-  margin:1vh 0;
-}
-h2{
-  font-family:'Poppins',sans-serif;
-  font-size:5vw;
-  max-font-size:2rem;
-  color:#ff2f7d;
-  margin:1vh 0;
-}
-p{
-  font-size:4.5vw;
-  max-font-size:1.45rem;
-  line-height:1.7;
-  font-weight:700;
-  margin:1vh auto;
-  max-width:92%;
-}
-
-.pink{color:#ff0066;}
-.red{color:#b8003a;}
-.purple{color:#7a2cff;}
-.gold{color:#b8860b;}
-
-button{
-  padding:1.6vh 6vw;
-  margin:1.2vh;
-  font-size:4.2vw;
-  max-font-size:1.2rem;
-  border:none;
-  border-radius:40px;
-  cursor:pointer;
-  font-family:'Poppins',sans-serif;
-}
-.yes{
-  background:linear-gradient(135deg,#ff2f7d,#ff7aa2);
-  color:white;
-}
-.no{
-  background:#444;
-  color:white;
+  display:none;
   position:relative;
 }
-
-.teddy{
-  font-size:18vh;
-  max-font-size:95px;
-  margin:1vh 0;
-  animation:teddyMove 6s ease-in-out infinite alternate;
+.card.active{display:block}
+h1{
+  font-family:'Great Vibes', cursive;
+  font-size:2.2rem;
+  background:linear-gradient(45deg,#ff4d6d,#9b5de5);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin:10px 0;
 }
-@keyframes teddyMove{
-  from{transform:translateX(-60px);}
-  to{transform:translateX(60px);}
+.question{
+  font-size:1.15rem;
+  font-weight:500;
+  margin:12px 0;
+  background:linear-gradient(45deg,#ff4d6d,#9b5de5);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
-
-.corner{
+.frame{
+  margin:12px auto;
+  padding:6px;
+  border-radius:16px;
+  background:linear-gradient(45deg,#ff4d6d,#9b5de5);
+  width:100%;
+}
+.frame img{
+  width:100%;
+  border-radius:12px;
+  display:block;
+}
+.buttons{
+  display:flex;
+  justify-content:space-around;
+  margin-top:15px;
+  position:relative;
+}
+button{
+  border:none;
+  border-radius:30px;
+  padding:12px 22px;
+  font-size:1rem;
+  cursor:pointer;
+  color:#fff;
+  background:#ff4d6d;
+  transition:.2s;
+}
+button:hover{transform:scale(1.05)}
+.no-btn{background:#9b5de5; position:relative}
+.list span{
+  display:block;
+  opacity:0;
+  margin:8px 0;
+  animation:show 1s forwards;
+}
+@keyframes show{to{opacity:1}}
+.signature{
+  margin-top:10px;
+  font-size:1.2rem;
+  font-family:'Great Vibes', cursive;
+}
+.overlay{
   position:fixed;
-  font-size:6vh;
-  max-font-size:50px;
-  opacity:0.85;
-  animation:cornerPulse 4s infinite alternate;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
-.tl{top:1vh;left:1vw;}
-.tr{top:1vh;right:1vw;}
-.bl{bottom:1vh;left:1vw;}
-.br{bottom:1vh;right:1vw;}
-@keyframes cornerPulse{
-  from{transform:scale(1);}
-  to{transform:scale(1.1);}
-}
-
-.heart{
-  position:absolute;
-  font-size:4vh;
-  animation:float 14s linear infinite;
-  opacity:0.65;
-}
-@keyframes float{
-  from{transform:translateY(110vh);}
-  to{transform:translateY(-10vh);}
+.start-btn{
+  padding:15px 35px;
+  font-size:1.3rem;
+  border:none;
+  border-radius:40px;
+  background:#ff4d6d;
+  color:#fff;
 }
 </style>
 </head>
 
 <body>
 
+<div class="overlay" id="overlay">
+  <div>
+    <h1 style="color:#fff">Tap to Start ❤️</h1>
+    <button class="start-btn" onclick="startAll()">Start</button>
+  </div>
+</div>
+
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_35b63bcbf1.mp3">
+  <source src="https://archive.org/download/RomanticPianoMusic/RomanticPianoMusic.mp3" type="audio/mpeg">
 </audio>
 
-<div class="card">
-
-<div class="corner tl">🧸</div>
-<div class="corner tr">🧸</div>
-<div class="corner bl">🧸</div>
-<div class="corner br">🧸</div>
-
-<!-- Q1 -->
-<section class="active" id="s1">
-  <h1>Aarti 💖</h1>
-  <p class="pink">ये कोई साधारण सवाल नहीं है…</p>
-  <p class="purple">ये वो एहसास है, जो <span class="gold">दिल में बहुत समय से</span> था।</p>
-  <h2 class="red">क्या तुम मेरी वैलेंटाइन बनोगी?</h2>
-  <button class="yes" onclick="start(2)">हाँ ❤️</button>
-  <button class="no" onmouseover="zigzag(this)">ना 🙈</button>
-</section>
-
-<!-- Q2 -->
-<section id="s2">
-  <div class="teddy">🧸</div>
-  <p class="pink">क्या तुम्हें एहसास है…</p>
-  <p class="red">तुम मेरी ज़िंदगी में <span class="gold">कितनी खास</span> हो?</p>
-  <button class="yes" onclick="go(3)">हाँ, सच में 💕</button>
-  <button class="no" onmouseover="zigzagWide(this)">ना 🙈</button>
-</section>
-
-<!-- Q3 -->
-<section id="s3">
-  <p class="purple">जब मैं तुम्हें याद करता हूँ,</p>
-  <p class="pink">क्या तुम्हारा दिल भी <span class="gold">मुझे महसूस</span> करता है?</p>
-  <button class="yes" onclick="go(4)">हाँ, बिल्कुल 🥰</button>
-  <button class="no" onmouseover="zigzagFast(this)">ना 🙈</button>
-</section>
-
-<!-- Q4 -->
-<section id="s4">
-  <div class="teddy">🧸💖</div>
-  <p class="red">क्या तुम्हें पता है,</p>
-  <p class="purple">तुम्हारी <span class="gold">एक मुस्कान</span> मेरा पूरा दिन बदल देती है?</p>
-  <button class="yes" onclick="go(5)">हाँ, दिल से 💖</button>
-  <button class="no" onmouseover="zigzagFall(this)">ना 🙈</button>
-</section>
-
-<!-- Q5 -->
-<section id="s5">
-  <p class="pink">अगर मैं कहूँ कि</p>
-  <p class="purple"><span class="gold">मेरा सुकून, मेरा घर,</span></p>
-  <p class="red">सब कुछ तुम हो…</p>
-  <button class="yes" onclick="go(6)">हाँ 💞</button>
-</section>
-
-<!-- Q6 (NEW) -->
-<section id="s6">
-  <p class="purple">क्या तुम मेरे साथ</p>
-  <p class="pink"><span class="gold">हर खुशी और हर मुश्किल</span></p>
-  <p class="red">साझा करना चाहोगी?</p>
-  <button class="yes" onclick="go(7)">हाँ 🌸</button>
-</section>
-
-<!-- Q7 (NEW) -->
-<section id="s7">
-  <p class="pink">क्या तुम मानती हो कि</p>
-  <p class="purple"><span class="gold">प्यार सिर्फ आज का नहीं,</span></p>
-  <p class="red">हमेशा का एहसास होता है?</p>
-  <button class="yes" onclick="go(8)">हाँ 🫶</button>
-</section>
-
-<!-- Q8 (NEW) -->
-<section id="s8">
-  <p class="red">अगर मैं कहूँ कि</p>
-  <p class="purple"><span class="gold">मेरी सबसे बड़ी दुआ</span></p>
-  <p class="pink">तुम हो… तो?</p>
-  <button class="yes" onclick="go(9)">हाँ ❤️</button>
-</section>
-
-<!-- FINAL -->
-<section id="s9">
-  <h1>Happy Valentine’s Day Aarti ❤️</h1>
-  <p class="pink">मैं परफेक्ट नहीं हूँ,</p>
-  <p class="red">लेकिन तुम्हें <span class="gold">हर दिन</span> चुनता हूँ।</p>
-  <p class="purple">तुम मेरी सबसे <span class="gold">खूबसूरत कहानी</span> हो।</p>
-  <h2 class="red">Prem ❤️</h2>
-</section>
-
+<!-- OPENING -->
+<div class="card active" id="card0">
+  <h1>Hi Aarti ❤️</h1>
+  <div class="frame"><img src="./images/boy_start.jpg"></div>
+  <button onclick="next(0)">Next</button>
 </div>
 
 <script>
-function start(n){
+const questions = [
+  {q:"क्या तुम्हें मेरी मुस्कान पसंद है? 😊", img:"q1.jpg"},
+  {q:"क्या तुम मेरे साथ हँसना चाहोगी? 😄", img:"q2.jpg"},
+  {q:"क्या हम साथ में ढेर सारी यादें बनाएँ? 📸", img:"q3.jpg"},
+  {q:"क्या तुम मेरा हाथ हमेशा थामे रहोगी? 🤝", img:"q4.jpg"},
+  {q:"क्या तुम मेरी हर खुशी बनोगी? 🌸", img:"q5.jpg"},
+  {q:"क्या तुम मेरे हर सपने का हिस्सा बनोगी? ✨", img:"q6.jpg"},
+  {q:"क्या तुम्हारी आँखों में मैं अपना घर देख सकता हूँ? 👀❤️", img:"q7_eyes.jpg"},
+  {q:"क्या तुम हमेशा मेरी Valentine रहोगी? 💖", img:"q2.jpg"}
+];
+let noTexts=["गलत जवाब 😜","फिर सोचो… 🤔","पक्का? ❤️"];
+</script>
+
+<script>
+let container=document.body;
+questions.forEach((item,i)=>{
+  let d=document.createElement("div");
+  d.className="card";
+  d.id="card"+(i+1);
+  d.innerHTML=`
+    <h1>Question ${i+1}</h1>
+    <div class="question" id="qt${i}">${item.q}</div>
+    <div class="frame"><img src="./images/${item.img}"></div>
+    <div class="buttons">
+      <button onclick="next(${i+1})">हाँ</button>
+      <button class="no-btn" onclick="noAction(this,${i})">नहीं</button>
+    </div>
+  `;
+  container.appendChild(d);
+});
+</script>
+
+<div class="card" id="week">
+  <h1>Valentine Week 💝</h1>
+  <div class="list">
+    <span style="animation-delay:0s">🌹 Happy Rose Day</span>
+    <span style="animation-delay:1s">🧸 Happy Teddy Day</span>
+    <span style="animation-delay:2s">🍫 Happy Chocolate Day</span>
+    <span style="animation-delay:3s">💍 Happy Propose Day</span>
+    <span style="animation-delay:4s">🤝 Happy Promise Day (in advance)</span>
+    <span style="animation-delay:5s">🤗 Happy Hug Day (in advance)</span>
+    <span style="animation-delay:6s">💋 Happy Kiss Day (in advance)</span>
+    <span style="animation-delay:7s">❤️ Happy Valentine’s Day (in advance)</span>
+  </div>
+  <button onclick="showFinal()">Next</button>
+</div>
+
+<div class="card" id="final">
+  <h1>Happy Valentine’s Day Aarti ❤️</h1>
+  <div class="frame"><img src="./images/couple.jpg"></div>
+  <div class="signature">— Prem 💕</div>
+</div>
+
+<script>
+function startAll(){
+  document.getElementById("overlay").style.display="none";
   document.getElementById("music").play();
-  go(n);
 }
-function go(n){
-  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-  document.getElementById("s"+n).classList.add("active");
+function next(i){
+  document.getElementById("card"+i).classList.remove("active");
+  if(i+1<=questions.length)
+    document.getElementById("card"+(i+1)).classList.add("active");
+  else
+    document.getElementById("week").classList.add("active");
 }
-
-function zigzag(b){
-  b.style.left=(Math.random()*200-100)+"px";
-  b.style.top=(Math.random()*120-60)+"px";
+function noAction(btn,i){
+  let t=document.getElementById("qt"+i);
+  let idx=btn.dataset.i||0;
+  t.textContent=noTexts[idx%3];
+  btn.dataset.i=++idx;
+  btn.style.left=Math.random()*120-60+"px";
 }
-function zigzagWide(b){
-  b.style.left=(Math.random()*300-150)+"px";
-  b.style.top=(Math.random()*200-100)+"px";
+function showFinal(){
+  document.getElementById("week").classList.remove("active");
+  document.getElementById("final").classList.add("active");
 }
-function zigzagFast(b){
-  b.style.left=(Math.random()*220-110)+"px";
-  b.style.top=(Math.random()*220-110)+"px";
-}
-function zigzagFall(b){
-  b.style.top="200px";
-  setTimeout(()=>b.style.top="0px",300);
-}
-
-setInterval(()=>{
-  const h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="❤️";
-  h.style.left=Math.random()*100+"vw";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),15000);
-},350);
 </script>
 
 </body>
